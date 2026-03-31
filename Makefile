@@ -1,10 +1,10 @@
-CXX = g++
-CXXFLAGS = -std=c++17 -O2 -Wall
+# Empty Makefile - OJ system provides its own build process
+# The src.hpp file contains the MyList template implementation
 
-code: main.cpp mylist.h
-	$(CXX) $(CXXFLAGS) main.cpp -o code
+.PHONY: all clean
+
+all:
+	@echo "Build process managed by OJ system"
 
 clean:
 	rm -f code
-
-.PHONY: clean
