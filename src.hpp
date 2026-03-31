@@ -218,7 +218,18 @@ public:
     {
         MyList result;
 
-        if (index <= 0 || index >= list_size) {
+        if (index <= 0) {
+            // Return everything, keep nothing
+            result.head = head;
+            result.tail = tail;
+            result.list_size = list_size;
+            head = tail = nullptr;
+            list_size = 0;
+            return result;
+        }
+
+        if (index >= list_size) {
+            // Return nothing, keep everything
             return result;
         }
 
